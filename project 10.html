@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of Array Elements</title>
+</head>
+<body>
+
+<h1>Sum of Elements (10 Inputs)</h1>
+
+<p>Enter 10 numbers:</p>
+
+
+<input type="number" id="num1">
+<input type="number" id="num2">
+<input type="number" id="num3">
+<input type="number" id="num4">
+<input type="number" id="num5">
+<input type="number" id="num6">
+<input type="number" id="num7">
+<input type="number" id="num8">
+<input type="number" id="num9">
+<input type="number" id="num10">
+
+<br><br>
+<button onclick="sumArray()">Get Sum</button>
+
+<p id="result"></p>
+
+<script>
+function sumArray() {
+
+    let numbers = [
+        Number(document.getElementById("num1").value),
+        Number(document.getElementById("num2").value),
+        Number(document.getElementById("num3").value),
+        Number(document.getElementById("num4").value),
+        Number(document.getElementById("num5").value),
+        Number(document.getElementById("num6").value),
+        Number(document.getElementById("num7").value),
+        Number(document.getElementById("num8").value),
+        Number(document.getElementById("num9").value),
+        Number(document.getElementById("num10").value)
+    ];
+
+
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+
+t
+    document.getElementById("result").textContent = `Sum of elements: ${sum}`;
+}
+</script>
+
+</body>
+</html>

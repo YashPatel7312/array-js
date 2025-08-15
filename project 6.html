@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Filter Even Numbers (10 Inputs)</title>
+</head>
+<body>
+
+<h1>Filter Even Numbers (10 Inputs)</h1>
+
+<p>Enter 10 numbers:</p>
+
+
+<input type="number" id="num1">
+<input type="number" id="num2">
+<input type="number" id="num3">
+<input type="number" id="num4">
+<input type="number" id="num5">
+<input type="number" id="num6">
+<input type="number" id="num7">
+<input type="number" id="num8">
+<input type="number" id="num9">
+<input type="number" id="num10">
+
+<br><br>
+<button onclick="filterEven()">Get Even Numbers</button>
+
+
+<p id="resultLoop"></p>
+<p id="resultFilter"></p>
+
+<script>
+function filterEven() {
+ 
+  let numbers = [
+    Number(document.getElementById("num1").value),
+    Number(document.getElementById("num2").value),
+    Number(document.getElementById("num3").value),
+    Number(document.getElementById("num4").value),
+    Number(document.getElementById("num5").value),
+    Number(document.getElementById("num6").value),
+    Number(document.getElementById("num7").value),
+    Number(document.getElementById("num8").value),
+    Number(document.getElementById("num9").value),
+    Number(document.getElementById("num10").value)
+  ];
+
+
+  let evenLoop = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evenLoop.push(numbers[i]);
+    }
+  }
+
+  let evenFilter = numbers.filter(num => num % 2 === 0);
+
+
+  document.getElementById("resultLoop").textContent =
+    `Even numbers (Loop): ${evenLoop.join(", ")}`;
+
+  document.getElementById("resultFilter").textContent =
+    `Even numbers (.filter()): ${evenFilter.join(", ")}`;
+}
+</script>
+
+</body>
+</html>

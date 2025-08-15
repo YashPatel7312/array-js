@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Find minmume from User Input</title>
+</head>
+<body>
+
+<h1>Find minmume Value (User Input)</h1>
+
+
+<p>Enter 5 numbers:</p>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<input type="number" id="num3">
+<input type="number" id="num4">
+<input type="number" id="num5">
+<br><br>
+<button onclick="findmin()">Find minmume</button>
+
+
+<p id="result"></p>
+
+<script>
+function findmin() {
+
+  let numbers = [
+    Number(document.getElementById("num1").value),
+    Number(document.getElementById("num2").value),
+    Number(document.getElementById("num3").value),
+    Number(document.getElementById("num4").value),
+    Number(document.getElementById("num5").value)
+  ];
+
+
+  let minValue = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < minValue) {
+      minValue = numbers[i];
+    }
+  }
+
+
+  document.getElementById("result").textContent = 
+    `The minmume value is: ${minValue}`;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Country Selector (Numeric Codes)</title>
+</head>
+<body>
+
+<h1>Country Selector (Numeric Codes)</h1>
+
+
+<select id="countrySelect">
+  <option value="">-- Select a country --</option>
+</select>
+
+
+<p id="result"></p>
+
+<script>
+// Countries with numeric ISO codes
+const countries = {
+  4: "Afghanistan",
+  8: "Albania",
+  12: "Algeria",
+  16: "American Samoa",
+  20: "Andorra",
+  24: "Angola",
+  32: "Argentina",
+  51: "Armenia",
+  36: "Australia",
+  40: "Austria",
+  50: "Bangladesh",
+  56: "Belgium",
+  76: "Brazil",
+  64: "Bhutan",
+  124: "Canada",
+  156: "China",
+  208: "Denmark",
+  818: "Egypt",
+  246: "Finland",
+  250: "France",
+  276: "Germany",
+  300: "Greece",
+  356: "India",
+  360: "Indonesia",
+  364: "Iran",
+  368: "Iraq",
+  380: "Italy",
+  392: "Japan",
+  404: "Kenya",
+  410: "South Korea",
+  458: "Malaysia",
+  484: "Mexico",
+  524: "Nepal",
+  528: "Netherlands",
+  554: "New Zealand",
+  586: "Pakistan",
+  608: "Philippines",
+  643: "Russia",
+  682: "Saudi Arabia",
+  702: "Singapore",
+  710: "South Africa",
+  724: "Spain",
+  144: "Sri Lanka",
+  756: "Switzerland",
+  764: "Thailand",
+  792: "Turkey",
+  804: "Ukraine",
+  784: "United Arab Emirates",
+  826: "United Kingdom",
+  840: "United States",
+  704: "Vietnam"
+};
+
+
+const select = document.getElementById("countrySelect");
+for (const code in countries) {
+  const option = document.createElement("option");
+  option.value = code;
+  option.textContent = `${countries[code]} (${code})`;
+  select.appendChild(option);
+}
+
+
+select.addEventListener("change", function() {
+  const code = this.value;
+  const result = document.getElementById("result");
+  
+  if (code) {
+    result.textContent = `You selected: ${countries[code]} | Numeric Code: ${code}`;
+  } else {
+    result.textContent = "";
+  }
+});
+</script>
+
+</body>
+</html>

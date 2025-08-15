@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Duplicates (10 Inputs)</title>
+</head>
+<body>
+
+<h1>Remove Duplicate Items from Array</h1>
+
+<p>Enter 10 numbers:</p>
+
+<input type="text" id="num1">
+<input type="text" id="num2">
+<input type="text" id="num3">
+<input type="text" id="num4">
+<input type="text" id="num5">
+<input type="text" id="num6">
+<input type="text" id="num7">
+<input type="text" id="num8">
+<input type="text" id="num9">
+<input type="text" id="num10">
+
+<br><br>
+<button onclick="removeDuplicates()">Remove Duplicates</button>
+
+<p id="resultLoop"></p>
+<p id="resultSet"></p>
+
+<script>
+function removeDuplicates() {
+
+    let arr = [
+        document.getElementById("num1").value,
+        document.getElementById("num2").value,
+        document.getElementById("num3").value,
+        document.getElementById("num4").value,
+        document.getElementById("num5").value,
+        document.getElementById("num6").value,
+        document.getElementById("num7").value,
+        document.getElementById("num8").value,
+        document.getElementById("num9").value,
+        document.getElementById("num10").value
+    ];
+
+    let uniqueLoop = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!uniqueLoop.includes(arr[i])) {
+            uniqueLoop.push(arr[i]);
+        }
+    }
+
+    let uniqueSet = [...new Set(arr)];
+
+    document.getElementById("resultLoop").textContent =
+        `Unique (Loop + includes): ${uniqueLoop.join(", ")}`;
+    document.getElementById("resultSet").textContent =
+        `Unique (Set): ${uniqueSet.join(", ")}`;
+}
+</script>
+
+</body>
+</html>

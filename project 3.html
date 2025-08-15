@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Reverse Country List</title>
+</head>
+<body>
+
+<h1>Reverse Country Array Example</h1>
+
+<p><strong>Original List:</strong></p>
+<ul id="originalList"></ul>
+
+<p><strong>Reversed List:</strong></p>
+<ul id="reversedList"></ul>
+
+<script>
+
+const countryList = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "American Samoa",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Argentina",
+  "Armenia"
+];
+
+
+const originalListEl = document.getElementById("originalList");
+countryList.forEach(country => {
+  const li = document.createElement("li");
+  li.textContent = country;
+  originalListEl.appendChild(li);
+});
+
+
+
+const reversedCountries = [...countryList].reverse();
+const reversedListEl = document.getElementById("reversedList");
+reversedCountries.forEach(country => {
+  const li = document.createElement("li");
+  li.textContent = country;
+  reversedListEl.appendChild(li);
+});
+</script>
+
+</body>
+</html>
